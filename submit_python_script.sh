@@ -14,4 +14,4 @@ echo "created log folders successfully"
 qsub    -l h_rss=8G \
         -o ${OUTPUT_LOG_DIR}/Python_Output.out \
         -e ${OUTPUT_LOG_DIR}/Python_Error.err \
-        $script_folder/call_Python_Script.sh $script_folder;
+        $script_folder/call_python_script.sh $script_folder;
