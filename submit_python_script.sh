@@ -14,7 +14,7 @@ cd $(pwd)
 
 for subject in {1..5}; do
         qsub    -l h_rss=1G \
-                -o ${OUTPUT_LOG_DIR}/Python_Output.out \
-                -e ${OUTPUT_LOG_DIR}/Python_Error.err \
+                -o ${OUTPUT_LOG_DIR}/Python_Output_$subject.out \
+                -e ${OUTPUT_LOG_DIR}/Python_Error_$subject.err \
                 call_python_script.sh $script_folder $subject;  
 done
