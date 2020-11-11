@@ -1,3 +1,5 @@
+# Rosie is editing
+
 #!/bin/bash
 # Script to call the job scheduler on the cluster
 
