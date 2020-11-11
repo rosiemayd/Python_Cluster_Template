@@ -11,7 +11,10 @@ OUTPUT_LOG_DIR=~/log
 mkdir -p $OUTPUT_LOG_DIR
 echo "created log folders successfully"
 cd $(pwd)
-qsub    -l h_rss=1G \
-        -o ${OUTPUT_LOG_DIR}/Python_Output.out \
-        -e ${OUTPUT_LOG_DIR}/Python_Error.err \
-        call_python_script.sh $script_folder;
+
+for subject in {1..5}; do
+        qsub    -l h_rss=1G \
+                -o ${OUTPUT_LOG_DIR}/Python_Output.out \
+                -e ${OUTPUT_LOG_DIR}/Python_Error.err \
+                call_python_script.sh $script_folder $subject;  
+done
