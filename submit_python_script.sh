@@ -1,7 +1,7 @@
 #!/bin/bash
 # Script to call the job scheduler on the cluster
 
-# The R scripts folder is taken as an input
+# The scripts folder is taken as an input
 script_folder=$1
 
 # Create log folder for output and error files
@@ -10,8 +10,8 @@ script_folder=$1
 OUTPUT_LOG_DIR=~/log
 mkdir -p $OUTPUT_LOG_DIR
 echo "created log folders successfully"
-
+cd $(pwd)
 qsub    -l h_rss=8G \
         -o ${OUTPUT_LOG_DIR}/Python_Output.out \
         -e ${OUTPUT_LOG_DIR}/Python_Error.err \
-        $script_folder/call_python_script.sh $script_folder;
+        call_python_script.sh $script_folder;
